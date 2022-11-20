@@ -17,32 +17,36 @@ pertanyaan.innerHTML=botSay()[0]
 function botStart(){
     init++
     if(init === 1){
-       setTimeout(botDelay({nama: jawaban.value}), 1500)
+       setTimeout(botDelay({nama: jawaban.value}), 5500)
     }else if(init === 2){
-        setTimeout(botDelay({usia: jawaban.value}), 1500)
+        setTimeout(botDelay({usia: jawaban.value}), 5500)
     }else if(init === 3){
-        setTimeout(botDelay({hobi: jawaban.value}), 1500)
+        setTimeout(botDelay({hobi: jawaban.value}), 5500)
     }
     else if(init === 4){
-        setTimeout(botDelay({pacar: jawaban.value}), 1500)
+        setTimeout(botDelay({pacar: jawaban.value}), 5500)
     }else if(init === 5){
-        setTimeout(botDelay({gabut: jawaban.value}), 1500)
+        setTimeout(botDelay({gabut: jawaban.value}), 5500)
     }   else if(init === 6){
         alert("terimkasih telah mencoba bot sederhana dari ikmal")
         alert("siuu next time")
+        alert("jika ada masukan mau di tambahkan fitur silakan chat ikmal yaak terimaksih:D")
        finishing()
     }    else{
         botEnd()
     }
 }
 function botDelay(jawabanUser){
-  pertanyaan.innerHTML=botSay(jawabanUser)[init]
+    setTimeout(() => {
+        pertanyaan.innerHTML =botSay(jawabanUser)[init]
+       }, [1250])
+       jawaban.value=""
 }
 // Berhenti
 function finishing(){
-    console.log("finising...")
+   jawaban.value="siap terimakasih :D"
 }
 // Selesai
 function botEnd(){
-    console.log("bot end")
+    window.localtion.reload()
 }
